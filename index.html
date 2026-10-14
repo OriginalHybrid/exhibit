@@ -14,13 +14,13 @@
   .pill{border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:6px 12px;font-size:12px;color:#cdcdcf}
 
   .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 24px 60px;position:relative;overflow:hidden}
-  /* calm aurora background - slow + subtle */
-  .orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.32;pointer-events:none;will-change:transform}
-  .orb.o1{width:640px;height:640px;left:-160px;top:-120px;background:radial-gradient(circle,rgba(255,159,10,.4),transparent 70%);animation:drift1 38s ease-in-out infinite alternate}
-  .orb.o2{width:720px;height:720px;right:-200px;top:20%;background:radial-gradient(circle,rgba(50,214,255,.3),transparent 70%);animation:drift2 46s ease-in-out infinite alternate}
-  .orb.o3{width:520px;height:520px;left:30%;bottom:-200px;background:radial-gradient(circle,rgba(168,85,247,.24),transparent 70%);animation:drift1 52s ease-in-out infinite alternate-reverse}
-  @keyframes drift1{from{transform:translate(0,0) scale(1)}to{transform:translate(36px,24px) scale(1.04)}}
-  @keyframes drift2{from{transform:translate(0,0) scale(1.02)}to{transform:translate(-36px,-20px) scale(1)}}
+  /* aurora background - single animation per orb (bulletproof) */
+  .orb{position:absolute;filter:blur(60px);pointer-events:none;border-radius:50%}
+  .orb.o1{width:680px;height:680px;left:-160px;top:-120px;background:radial-gradient(circle at 40% 40%,rgba(255,159,10,.75),rgba(255,159,10,.28) 55%,transparent 72%);animation:glowA 8s ease-in-out infinite alternate}
+  .orb.o2{width:760px;height:760px;right:-200px;top:20%;background:radial-gradient(circle at 60% 40%,rgba(50,214,255,.65),rgba(50,214,255,.22) 55%,transparent 72%);animation:glowB 11s ease-in-out infinite alternate}
+  .orb.o3{width:560px;height:560px;left:30%;bottom:-200px;background:radial-gradient(circle at 50% 60%,rgba(168,85,247,.6),rgba(168,85,247,.2) 55%,transparent 72%);animation:glowA 13s ease-in-out -4s infinite alternate-reverse}
+  @keyframes glowA{from{transform:translate(0,0) scale(1);opacity:.4}to{transform:translate(110px,70px) scale(1.14);opacity:.68}}
+  @keyframes glowB{from{transform:translate(0,0) scale(1.1);opacity:.65}to{transform:translate(-110px,-70px) scale(1);opacity:.38}}
   .grain{position:absolute;inset:0;opacity:.05;pointer-events:none}
 
   .eyebrow{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;position:relative}
